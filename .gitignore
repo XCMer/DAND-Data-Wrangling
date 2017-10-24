@@ -4,3 +4,4 @@
 *.pickle
 *.bz2
 *.osm
+*.pyc
