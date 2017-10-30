@@ -1,7 +1,14 @@
+"""
+Transform street names from the old to the cleaned up format.
+"""
 import re
 
 
 def standardize_suffixes(street_name):
+    """
+    Although started as a way of standardizing suffixes, these words do not always
+    appear at the end of the road.
+    """
     mapping = {
         'rd.': 'Road',
         'rd': 'Road',
