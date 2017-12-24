@@ -1,43 +1,43 @@
 CREATE TABLE nodes (
-    id INTEGER PRIMARY KEY NOT NULL,
+    id BIGINT PRIMARY KEY NOT NULL,
     lat REAL,
     lon REAL,
-    user TEXT,
-    uid INTEGER,
-    version INTEGER,
-    changeset INTEGER,
-    timestamp TEXT
+    `user` TEXT,
+    uid BIGINT,
+    version BIGINT,
+    changeset BIGINT,
+    `timestamp` TEXT
 );
 
 CREATE TABLE nodes_tags (
-    id INTEGER,
-    key TEXT,
-    value TEXT,
-    type TEXT,
+    id BIGINT,
+    `key` TEXT,
+    `value` TEXT,
+    `type` TEXT,
     FOREIGN KEY (id) REFERENCES nodes(id)
 );
 
 CREATE TABLE ways (
-    id INTEGER PRIMARY KEY NOT NULL,
-    user TEXT,
-    uid INTEGER,
+    id BIGINT PRIMARY KEY NOT NULL,
+    `user` TEXT,
+    uid BIGINT,
     version TEXT,
-    changeset INTEGER,
-    timestamp TEXT
+    changeset BIGINT,
+    `timestamp` TEXT
 );
 
 CREATE TABLE ways_tags (
-    id INTEGER NOT NULL,
-    key TEXT NOT NULL,
-    value TEXT NOT NULL,
-    type TEXT,
+    id BIGINT NOT NULL,
+    `key` TEXT NOT NULL,
+    `value` TEXT NOT NULL,
+    `type` TEXT,
     FOREIGN KEY (id) REFERENCES ways(id)
 );
 
 CREATE TABLE ways_nodes (
-    id INTEGER NOT NULL,
-    node_id INTEGER NOT NULL,
-    position INTEGER NOT NULL,
+    id BIGINT NOT NULL,
+    node_id BIGINT NOT NULL,
+    position BIGINT NOT NULL,
     FOREIGN KEY (id) REFERENCES ways(id),
     FOREIGN KEY (node_id) REFERENCES nodes(id)
 );
